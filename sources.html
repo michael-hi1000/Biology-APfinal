@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Plants Reproduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url(image\ 3.jpg);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .text-border-box {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #11da50;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            width: 80%;
+            min-height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-border-box::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        header a:hover {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        h1 {
+            color: #1b5e20;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        
+        h2 {
+            color: #1b5e20;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        ul {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .members-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .members-list li {
+            background: linear-gradient(120deg, rgba(27, 94, 32, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #c8e6c9;
+            font-weight: 500;
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        @media (max-width: 900px) {
+            .text-border-box {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .text-border-box {
+                width: 95%;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            header a {
+                font-size: 16px;
+                margin: 0 8px;
+                padding: 6px 10px;
+            }
+            
+            .members-list {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .members-list li {
+                min-width: auto;
+            }
+        }
+        
+        .decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .decoration.circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            top: -80px;
+            right: -80px;
+        }
+        
+        .decoration.square {
+            width: 150px;
+            height: 150px;
+            background: #2575fc;
+            bottom: -70px;
+            left: -70px;
+            transform: rotate(45deg);
+        }
+        
+        .credit {
+            text-align: center;
+            margin-top: 30px;
+            color: #2e7d32;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="inde2x.html">Front page</a>
+        <a href="sexual reproduction.html">Asexual Reproduction</a>
+        <a href="selective breeding.html">Selective Breeding</a>
+        <a href="cultivated plants.html">Cultivated Plants</a>
+        <a href="blooket.html">Bored?</a>
+        <a href="sources.html">Credit and Sources</a>
+    </header>
+    
+    <div class="container">
+        <div class="text-border-box">
+            <div class="decoration circle"></div>
+            <div class="decoration square"></div>
+            
+            <h1>Credit and Sources</h1>
+            
+            <h2>Sources:</h2>
+            <p>This is the source that we used for this webstie:</p>
+            <h2>Members:</h2>
+            <ul>
+                <li>Bradley 9F/2</li>
+                <li>James 9F/9</li>
+                <li>Matthew 9F/17</li>
+                <li>Michael 9F/19</li>
+            </ul>

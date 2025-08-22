@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Plants Reproduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+            color: #2e7d32;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        header a:hover {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #1b5e20;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #1b5e20, #4caf50);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content-highlight {
+            background: linear-gradient(120deg, rgba(27, 94, 32, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border-left: 4px solid #1b5e20;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .example-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .example-card:hover .example-img img {
+            transform: scale(1.05);
+        }
+        
+        .example-content {
+            padding: 20px;
+        }
+        
+        .example-content h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .step {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #1b5e20;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            header a {
+                font-size: 16px;
+                margin: 0 8px;
+                padding: 6px 10px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .icon-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .icon-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .icon-list i {
+            color: #1b5e20;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="inde2x.html">Front page</a>
+        <a href="sexual reproduction.html">Asexual Reproduction</a>
+        <a href="selective breeding.html">Selective Breeding</a>
+        <a href="cultivated plants.html">Cultivated Plants</a>
+        <a href="blooket.html">Bored?</a>
+        <a href="sources.html">Credit and Sources</a>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selective Plant Breeding</h1>
+            <p>Improving plants through controlled breeding for human benefit</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="content-section">
+            <h2>What is Selective Plant Breeding?</h2>
+            <p>Selective plant breeding is a method that uses genetic principles to produce plants that are more useful to humans, either economically or aesthetically. It works by carefully selecting plants that have the best traits, such as size, taste, or disease resistance, and then controlling their breeding to pass those traits to the next generation.</p>
+            
+            <div class="content-highlight">
+                <p>Over many cycles, breeders pick the best offspring from each generation to breed again, gradually improving the plant's genetics, appearance, and value.</p>
+            </div>
+            
+            <p>By using selective breeding, plants become better adapted to human needs, such as higher yields, better quality, and increased resistance to challenges, making selective breeding a powerful way to improve cultivated plants.</p>
+        </section>
+        
+        <section class="content-section">
+            <h2>The Selective Breeding Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Selection</h3>
+                    <p>Identify plants with desirable traits like size, taste, or disease resistance</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Cross-Breeding</h3>
+                    <p>Control the breeding between selected plants to combine desirable traits</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Evaluation</h3>
+                    <p>Examine offspring for the desired combination of traits</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Repetition</h3>
+                    <p>Repeat the process over multiple generations to strengthen desired traits</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Benefits of Selective Breeding</h2>
+            <ul>
+                <li>Enviormental adaptaion</li>
+                <p>Plants better suited to specific climates and growing conditions</p>
+                <li>Enhanced Quality</li>
+                <p>Improved taste, texture, appearance, and nutritional value of the plants</p>
+            </ul>
+        </section>
+        
+        <section class="content-section">
+            <h2>Examples of Selective Breeding</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-img">
+                        <img src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern Corn">
+                    </div>
+                    <div class="example-content">
+                        <h3>Modern Corn</h3>
+                        <p>Developed from teosinte, a wild grass with small ears, through thousands of years of selective breeding</p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-img">
+                        <img src="white.jpg">
+                    </div>
+                    <div class="example-content">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-img">
+                        <img src="broccoli.webp" alt="Disease-Resistant Crops">
+                    </div>
+                    <div class="example-content">
+                        <h3>Brocolli</h3>
+                        <p>Broccoli is an example of selective breeding, where farmers bred it from wild mustard to produce large, tasty flower heads.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

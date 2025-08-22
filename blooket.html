@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Plants Reproduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+            color: #2e7d32;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        header a:hover {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: url(game2.jpg) center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #1b5e20;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #1b5e20, #4caf50);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .game-img {
+            height: 180px;
+            overflow: hidden;
+            background: #1b5e20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .game-img i {
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .game-content {
+            padding: 20px;
+        }
+        
+        .game-content h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #1b5e20, #4caf50);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .instructions {
+            background: linear-gradient(120deg, rgba(27, 94, 32, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border-left: 4px solid #1b5e20;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            header a {
+                font-size: 16px;
+                margin: 0 8px;
+                padding: 6px 10px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="inde2x.html">Front page</a>
+        <a href="sexual reproduction.html">Asexual Reproduction</a>
+        <a href="selective breeding.html">Selective Breeding</a>
+        <a href="cultivated plants.html">Cultivated Plants</a>
+        <a href="blooket.html">Bored?</a>
+        <a href="sources.html">Credit and Sources</a>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Blooket Games</h1>
+            <p>Test your knowledge with fun games about plant reproduction!</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="content-section">
+            <h2>Learning Through Play</h2>
+            <p>Reinforce your understanding of plant reproduction concepts with these fun Blooket games. Each game is designed to test your knowledge in an engaging way!</p>
+            
+            <div class="instructions">
+                <h3>Bored? Lets play!</h3>
+                <ol>
+                    <li>Click on any game link below</li>
+                    <li>Click "Play Solo"</li>
+                    <li>Choose a gamemode</li>
+                    <li>Answer questions to earn points</li>
+                    <li>Have fun playing!</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Available Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="game-content">
+                        <h3>Asexual Reproduction</h3>
+                        <p>Test your knowledge about vegetative propagation, runners, tubers, and other asexual reproduction methods.</p>
+                        <a href="#" class="btn">Play Game</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="game-content">
+                        <h3>Selective Breeding</h3>
+                        <p>How well do you understand plant genetics and selective breeding techniques?</p>
+                        <a href="#" class="btn">Play Game</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="game-content">
+                        <h3>Cultivated Plants</h3>
+                        <p>Identify different cultivated plants and their reproduction methods.</p>
+                        <a href="#" class="btn">Play Game</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

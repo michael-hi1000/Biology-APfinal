@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Plants Reproduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+            color: #2e7d32;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        header a:hover {
+            color: #000000;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-image: url(plant\ background\ 2.jpg);
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #1b5e20;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #1b5e20, #4caf50);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content-highlight {
+            background: linear-gradient(120deg, rgba(27, 94, 32, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border-left: 4px solid #1b5e20;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .example-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .example-card:hover .example-img img {
+            transform: scale(1.05);
+        }
+        
+        .example-content {
+            padding: 20px;
+        }
+        
+        .example-content h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+        
+        .advantages-disadvantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pros-cons {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pros-cons h3 {
+            color: #1b5e20;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        
+        .pros-cons ul {
+            list-style: none;
+        }
+        
+        .pros-cons li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .pros-cons i {
+            margin-right: 15px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        .pros i {
+            color: #4caf50;
+        }
+        
+        .cons i {
+            color: #f44336;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            header a {
+                font-size: 16px;
+                margin: 0 8px;
+                padding: 6px 10px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .icon-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .icon-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .icon-list i {
+            color: #1b5e20;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="inde2x.html">Front page</a>
+        <a href="sexual reproduction.html">Asexual Reproduction</a>
+        <a href="selective breeding.html">Selective Breeding</a>
+        <a href="cultivated plants.html">Cultivated Plants</a>
+        <a href="blooket.html">Bored?</a>
+        <a href="sources.html">Credit and Sources</a>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Asexual Reproduction in Plants</h1>
+            <p>Understanding how plants create genetically identical offspring</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="content-section">
+            <h2>What is Asexual Reproduction?</h2>
+            <p>Asexual reproduction is the process resulting in the production of genetically identical offspring from one parent, without the fusion of gametes. This method, also known as vegetative propagation, is highly efficient as it does not require a second parent or the process of pollination.</p>
+            
+            <div class="content-highlight">
+                <p>Asexual reproduction allows gardeners to propagate desired traits—such as disease resistance, sweet-tasting fruit, or robust stems—by using techniques like grafting, layering, and marcotting.</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Examples of Asexual Reproduction</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-img">
+                        <img src="potato.jpg" alt="Potatoes">
+                    </div>
+                    <div class="example-content">
+                        <h3>Potatoes</h3>
+                        <p>Potatoes regenerate from tubers, which are underground storage organs that contain buds capable of growing into new plants.</p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-img">
+                        <img src="strawberry.webp">
+                    </div>
+                    <div class="example-content">
+                        <h3>Strawberries</h3>
+                        <p>Strawberries spread via runners (stolons), which are stems that grow horizontally above ground and develop roots and shoots where leaves would normally grow.</p>
+                    </div>
+                </div>
